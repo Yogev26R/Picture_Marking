@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Picture Marking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ng-template [ngIf]="isLoggedIn()" [ngIfElse]="notLoggedIn">
+                <div class="navbar-nav">
+                    <a class="nav-link active" routerLink="documents">Documents <span
+                            class="sr-only">(current)</span></a>
+                </div>
+                <div class="navbar-nav navbar-center">
+                    <span class="navbar-text text-white">Hello {{getUserName()}}</span>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" routerLink="unsubscribe">UnSubscribe</a>
+                    <a class="nav-link active" href="#">Logout</a>
+                </div>
+            </ng-template>
+
+            <ng-template #notLoggedIn>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" routerLink="register">Register</a>
+                    <a class="nav-link active" routerLink="login">Login</a>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>

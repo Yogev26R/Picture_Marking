@@ -1,0 +1,7 @@
+<button (click)="setShape('Ellipse')">Ellipse</button>
+<button (click)="setShape('Rectangle')">Rectangle</button>
+
+<div #container id="container" style='height:800px;width:1200px; background-color: powderblue'>
+    <canvas #shapeCanvas class='canvas'></canvas>
+    <canvas #drawingCanvas class='canvas'></canvas>
+</div>

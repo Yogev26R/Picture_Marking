@@ -1,0 +1,4 @@
+<h1>{{document.documentName}}</h1>
+<app-create-shared-document [documentID]="document.documentID"></app-create-shared-document>
+<app-drawing [imageSRC]="'../../assets/' + document.imageURL" [documentID]="document.documentID"></app-drawing>
+<router-outlet></router-outlet>

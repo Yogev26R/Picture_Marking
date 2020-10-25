@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <RepositoryUrl>C:\Users\silver\source\repos\Infra\infrapackages</RepositoryUrl>
+    <Authors>AZ</Authors>
+    <Company>Mizrahi</Company>
+    <AssemblyName>DI</AssemblyName>
+    <RootNamespace>DI</RootNamespace>
+    <Product>Dependency Injection</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Contracts\Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

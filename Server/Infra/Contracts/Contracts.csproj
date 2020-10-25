@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <Company>Mizrahi</Company>
+    <Product>Contracts</Product>
+    <Authors>AZ</Authors>
+  </PropertyGroup>
+
+</Project>

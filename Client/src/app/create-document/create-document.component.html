@@ -1,0 +1,11 @@
+<form class="form-signin text-center" [formGroup]="createDocumentForm" (ngSubmit)="onSubmit()">
+    <h1 class="h3 mb-3 font-weight-normal">Create Document</h1>
+    <label for="inputDocumentName" class="sr-only">Document Name</label>
+    <input type="text" id="inputDocumentName" formControlName="documentName" class="form-control"
+        placeholder="Document Name" required>
+    <label for="inputImageURL" class="sr-only">Image URL</label>
+    <input type="text" id="inputImageURL" formControlName="imageURL" class="form-control" placeholder="Image URL"
+        required>
+    <button [disabled]="createDocumentForm.invalid" class="btn btn-lg btn-dark btn-block" type="submit">Create</button>
+    <p class="mt-5 mb-3 text-muted">{{this.msg}}</p>
+</form>

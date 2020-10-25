@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /D /Y &quot;$(TargetDir)*.*&quot; &quot;$(SolutionDir)\PictureMarking\bin\Debug\netcoreapp3.1\dlls\&quot;" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="ODP.NetCore" Version="2.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PictureMarkingContracts\PictureMarkingContracts.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,18 @@
+<div id="{{document.documentName}}" class="card col-4" style="width: 100%; height: 100%">
+    <img class="card-img-top" src="../../assets/{{document.imageURL}}" alt="Card image" style="width:100%">
+    <div class="card-body">
+        <h4 class="card-title">{{document.documentName}}</h4>
+        <button type="button" class="btn btn-primary" (click)="updateDocument()">Edit
+            document</button>
+        <div *ngIf="isShared; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+            <button type="button" class="btn btn-secondary float-right" disabled>shared</button>
+        </ng-template>
+        <ng-template #elseBlock>
+            <app-delete-document [document]="document" (deleteDocument)="onDeleteDocument()"></app-delete-document>
+        </ng-template>
+
+    </div>
+</div>
+
+<router-outlet></router-outlet>

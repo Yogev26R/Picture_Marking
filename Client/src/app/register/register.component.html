@@ -1,0 +1,43 @@
+<form class="form-signin text-center" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h1 class="h3 mb-3 font-weight-normal">Register Form</h1>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" id="inputEmail" formControlName="emailAddress" class="form-control" placeholder="Email address"
+        required autofocus>
+
+    <div *ngIf="emailAddress.pending" class="alert alert-primary">Pending...</div>
+    <!-- Display errors -->
+    <div *ngIf="emailAddress.invalid && (emailAddress.dirty || emailAddress.touched)" class="alert alert-danger">
+        <div *ngIf="emailAddress.errors.required">
+            Email is required.
+        </div>
+        <div *ngIf="emailAddress.errors.email">
+            Invalid Email.
+        </div>
+        <div *ngIf="emailAddress.errors.EmailAddressExists">
+            Email already used.
+        </div>
+    </div>
+    <label for="inputUserName" class="sr-only">User Name</label>
+    <input type="text" id="inputUserName" formControlName="userName" class="form-control" placeholder="User Name"
+        required>
+    <div *ngIf="userName.pending" class="alert alert-primary">Pending...</div>
+    <!-- Display errors -->
+    <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="alert alert-danger">
+
+        <div *ngIf="userName.errors.required">
+            User Name is required.
+        </div>
+        <div *ngIf="userName.errors.minlength">
+            User Name must be at least 6 characters long.
+        </div>
+        <div *ngIf="userName.errors.UserNameExists">
+            {{userName.errors.InvalidUserName}} already used.
+        </div>
+    </div>
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me"> Remember me
+        </label>
+    </div>
+    <button [disabled]="registerForm.invalid" class="btn btn-lg btn-dark btn-block" type="submit">Register</button>
+</form>

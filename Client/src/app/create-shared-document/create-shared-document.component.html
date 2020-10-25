@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-4">
+        <div class="input-group mb-3">
+            <input type="text" id="inputUserName" [formControl]="userName" class="form-control" placeholder="User Name"
+                aria-label="User Name" aria-describedby="basic-addon2" required>
+            <div class="input-group-append">
+                <button class="btn btn-dark" type="button" (click)="onShareBtnClick()">Share</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <p class="ml-5 mb-3 text-muted">{{this.msg}}</p>
+    </div>
+</div>
